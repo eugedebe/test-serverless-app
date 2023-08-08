@@ -5,14 +5,19 @@ import {
     AuthenticationDetails,
 } from "amazon-cognito-identity-js";
 
+const apiEndpoint = import.meta.env.VITE_MY_API_ENDPOINT;
+const userPoolId = import.meta.env.VITE_USER_POOL_ID;
+const clientId = import.meta.env.VITE_CLIEND_ID;
 
-const url = "https://nbq1wgzh9d.execute-api.eu-west-2.amazonaws.com/stagetest1/";
-
+const url = apiEndpoint;
+// "https://nbq1wgzh9d.execute-api.eu-west-2.amazonaws.com/stagetest1/";
 
 const getUserPool = () => {
     let poolData = {
-        UserPoolId: "eu-west-2_lYdgNFNRz", // Your user pool id here
-        ClientId: "15j3o5j00ekao3btgpnuj7t1jj", // Your client id here
+        UserPoolId: userPoolId,
+        // "eu-west-2_lYdgNFNRz", // Your user pool id here
+        ClientId: clientId
+        // "15j3o5j00ekao3btgpnuj7t1jj", // Your client id here
     };
     return new CognitoUserPool(poolData);
 

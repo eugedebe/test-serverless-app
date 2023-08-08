@@ -12,9 +12,12 @@
 	let userName;
 	let password;
 	const signUp = async () => {
+		const userPoolId = import.meta.env.VITE_USER_POOL_ID;
+		const clientId = import.meta.env.VITE_CLIEND_ID;
+
 		let poolData = {
-			UserPoolId: "eu-west-2_lYdgNFNRz", // Your user pool id here
-			ClientId: "15j3o5j00ekao3btgpnuj7t1jj", // Your client id here
+			UserPoolId: userPoolId, // Your user pool id here
+			ClientId: clientId, // Your client id here
 		};
 
 		let authenticationData = {
